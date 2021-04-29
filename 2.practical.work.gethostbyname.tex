@@ -1,0 +1,42 @@
+\documentclass{report}
+\title{Practical Work 2 Report}
+\author{Nguyen Ngoc Khiem}
+\begin{document}
+\maketitle
+When i run gethostbyname on my own computer:
+ryyy-ubuntu:2.practical.work.gethostbyname (master*) $ nslookup youtube.com                  
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   youtube.com
+Address: 142.250.204.142
+Name:   youtube.com
+Address: 2404:6800:4005:815::200e
+
+ryyy-ubuntu:2.practical.work.gethostbyname (master*) $ nslookup steamcommunity.com     
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   steamcommunity.com
+Address: 23.77.27.52
+Name:   steamcommunity.com
+Address: 64:ff9b::174d:1b34
+
+Then i run gethostbyname on my VM:
+ryyy@instance-3:~$ ./2.practical.work.gethostbyname 
+ Please enter hostname: 
+youtube.com
+IP address is: 
+172.217.160.14
+
+ryyy@instance-3:~$ ./2.practical.work.gethostbyname 
+ Please enter hostname: 
+steamcommunity.com
+IP address is: 
+23.77.27.52
+
+There are similarity in IP Address at steamcommunity.com and different in youtube.com IP Address
+
+/end{document}
