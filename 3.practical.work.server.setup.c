@@ -6,8 +6,7 @@
 #include <string.h>
 
 
-int main(int argc, char const *argv[])
-{
+int main (int argc, char const *argv[]){
         int sockfd, clen, clientfd;
         struct sockaddr_in saddr, caddr;
         unsigned short port = 8784;
@@ -37,9 +36,10 @@ int main(int argc, char const *argv[])
                 exit(-1);
         }
         else
-            {
+	{
                 printf("An user is waiting for connect\n");
-        }
+                
+	}
 
         return 0;
-
+}
