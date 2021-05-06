@@ -7,6 +7,7 @@
 #include <netdb.h>
 #include <arpa/inet.h>
 #include <stdbool.h> 
+#include <unistd.h>
 
 #define PORT 8784
 
@@ -29,7 +30,7 @@ unsigned short port = 8784;
 	printf("IP address is: \n");
 
     if (!h) {
-        printf("Cannot find IP.");
+        printf("Cannot find IP");
     }
     else {
 	for (unsigned int i=0; h->h_addr_list[i] != NULL; i++) {
