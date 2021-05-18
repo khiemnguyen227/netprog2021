@@ -45,7 +45,7 @@ int main (int argc, char const *argv[]){
 	}
         while (1) {
                 char m[500];
-                read(clientfd, mess, sizeof(mess));
+                read(clientfd, m, sizeof(m));
                 //print client message
 	        printf("client >   ");
                 //print server message
