@@ -39,19 +39,20 @@ int main (int argc, char const *argv[]){
                 printf("Error accepting connection\n");
                 exit(-1);
         }
-        else
-	{
+        else{
                 printf("An user is waiting for connect\n");
-                
+            
 	}
-    while (1) {
-    char m[500];
-		printf("client >  ");	
-		fgets(m, 500, stdin);
-		write(sockfd, m, strlen(m));
-		read(sockfd, m, sizeof(m));
-		printf("server > %s", m);
+        while (1) {
+                char m[500];
+                read(clientfd, mess, sizeof(mess));
+                //print client message
+	        printf("client >   ");
+                //print server message
+                printf("server > %s", m);	
+	        fgets(m, 500, stdin);
+	        write(sockfd, m, strlen(m));
+        
+        return 0;
     }
-
-    return 0;
 }
