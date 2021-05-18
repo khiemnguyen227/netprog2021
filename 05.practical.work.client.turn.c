@@ -17,7 +17,7 @@ struct hostent *h;
 struct sockaddr_in saddr;
 int sockfd;
 unsigned short port = 8784;
-	if(argc == 2) {
+    if(argc == 2) {
 	h = gethostbyname(argv[1]);
 	}
 	else {
@@ -55,15 +55,14 @@ unsigned short port = 8784;
 
     printf("Connected to the server.\n");
     
-    while (1) {
-        char m[500];
-			printf("client >  ");	
-			fgets(m, 500, stdin);
-			write(sockfd, m, strlen(m));
-			read(sockfd, m, sizeof(m));
-			printf("server > %s", m);
+while (1) {
+    char m[500];
+	printf("client >  ");	
+	fgets(m, 500, stdin);
+	write(sockfd, m, strlen(m));
+	read(sockfd, m, sizeof(m));
+	printf("server > %s", m);
+
+        return 0;
     }
-
-
-    return 0;
 }
