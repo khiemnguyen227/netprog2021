@@ -27,7 +27,7 @@ unsigned short port = 8784;
 	    h = gethostbyname(str);
 	}
 
-	printf("IP address is: \n");
+        printf("IP address is: \n");
 
     if (!h) {
         printf("Cannot find IP");
