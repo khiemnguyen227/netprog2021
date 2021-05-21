@@ -58,11 +58,12 @@ unsigned short port = 8784;
     while (1) {
         char m[500];
         char rep[500];
-    	printf("client > ");
+        //print client mess
+        printf("client > ");
         fgets(m, 500, stdin);
         m[strlen(m) - 1] = 0;
         send(sockfd, m, strlen(m)+ 1, 0);
-
+        //print server mess
         printf("server > ");
         fflush(stdout);
         recv(sockfd, rep, 500, 0);

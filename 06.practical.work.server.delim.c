@@ -46,10 +46,11 @@ int main (int argc, char const *argv[]){
         while (1) {
                 char m[500];
                 char rep[500];
+                //print client mess
     	        printf("client > ");
                 recv(clientfd, m, 500, 0);
                 printf("%s\n", m);
-
+                //print server mess
                 printf("server > ");
                 fgets(rep, 500, stdin);
                 rep[strlen(rep) - 1] = 0;
