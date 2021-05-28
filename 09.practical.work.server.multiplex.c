@@ -101,31 +101,31 @@ int main (int argc, char const *argv[]){
 		}
 	
 
-    	//message
-    	char m[500];
-    	char rep[500];
-    	while (1) {
+		//message
+		char m[500];
+		char rep[500];
+		while (1) {
 			//print client mess
-        	printf("client > ");
-        	recv(clientfd, m, 500, 0);
+			printf("client > ");
+			recv(clientfd, m, 500, 0);
 			m[500 - 1] = 0;
-        	printf("%s\n", m);
-        	//print server mess
-        	printf("server > ");
-        	fgets(rep, 500, stdin);
-        	//server "dc" disconnect
-        	if (strncmp(rep, "/dc", 3) == 0) {
-        		return 0;
-        	}
-                
-        	rep[strlen(rep) - 1] = 0;
-        	send(clientfd, rep, strlen(rep) + 1, 0);
-    	}
+			printf("%s\n", m);
+			//print server mess
+			printf("server > ");
+			fgets(rep, 500, stdin);				
+			//server "dc" disconnect
+			if (strncmp(rep, "/dc", 3) == 0) {
+				return 0;
+			}
+				
+			rep[strlen(rep) - 1] = 0;
+			send(clientfd, rep, strlen(rep) + 1, 0);
+		}
 	}	
-    shutdown(clientfd, SHUT_RDWR);
-    close(clientfd);
-    close(sockfd);
+	shutdown(clientfd, SHUT_RDWR);
+	close(clientfd);
+	close(sockfd);
 
-    return 0;	
-}
+	return 0;	
+	}
 
