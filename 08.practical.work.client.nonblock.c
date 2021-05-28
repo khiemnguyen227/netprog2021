@@ -20,13 +20,13 @@ struct sockaddr_in saddr;
 int sockfd;
 unsigned short port = 8784;
     if(argc == 2) {
-	h = gethostbyname(argv[1]);
+    h = gethostbyname(argv[1]);
 	}
 	else {
-	    printf("%s\n", " Please enter hostname: ");
-	    char str[50];
-	    scanf("%s", str);
-	    h = gethostbyname(str);
+        printf("%s\n", " Please enter hostname: ");
+        char str[50];
+        scanf("%s", str);
+        h = gethostbyname(str);
 	}
 
         printf("IP address is: \n");
@@ -35,8 +35,8 @@ unsigned short port = 8784;
         printf("Cannot find IP");
     }
     else {
-	for (unsigned int i=0; h->h_addr_list[i] != NULL; i++) {
-	    printf("%s\n", inet_ntoa( *(struct in_addr*)(h->h_addr_list[i])));
+    for (unsigned int i=0; h->h_addr_list[i] != NULL; i++) {
+        printf("%s\n", inet_ntoa( *(struct in_addr*)(h->h_addr_list[i])));
         }
     }
 
@@ -83,6 +83,7 @@ unsigned short port = 8784;
         printf("server > ");
         fflush(stdout);
         recv(sockfd, rep, 500, 0);
+        rep[500 - 1] = 0;
         printf("%s\n", rep);
         // client "/q" quit
         if (strncmp(m, "/q", 5) == 0) {
